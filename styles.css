@@ -1,0 +1,171 @@
+/* ----------------------------- */
+/*         ESTILOS BASE         */
+/* ----------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle, #1a1a2e, #0f3460);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* ----------------------------- */
+/*      CONTENEDOR PRINCIPAL     */
+/* ----------------------------- */
+.calculadora {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+}
+
+.calculadora h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00e0ff, 0 0 20px #00e0ff;
+    }
+    to {
+        text-shadow: 0 0 20px #00ff99, 0 0 30px #00ff99;
+    }
+}
+
+/* ----------------------------- */
+/*     CAMPOS DE ENTRADA        */
+/* ----------------------------- */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-container input,
+.input-container select {
+    width: 45%;
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: #00e0ff;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+    border-color: #00e0ff;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 15px #00e0ff;
+}
+
+/* ----------------------------- */
+/*         BOTÓN CALCULAR        */
+/* ----------------------------- */
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgba(255, 0, 0, 0.8);
+}
+
+/* ----------------------------- */
+/*         RESULTADO             */
+/* ----------------------------- */
+#resultado {
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff99;
+    text-shadow: 0px 0px 15px #00ff99;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s ease-in-out;
+}
+
+/* ----------------------------- */
+/*    EFECTOS ADICIONALES       */
+/* ----------------------------- */
+.calculadora:hover {
+    box-shadow: 0px 15px 40px rgba(0, 255, 255, 0.6);
+    transition: all 0.5s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ----------------------------- */
+/*        RESPONSIVE            */
+/* ----------------------------- */
+@media (max-width: 500px) {
+    .calculadora {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .input-container {
+        flex-direction: column;
+    }
+
+    .input-container input,
+    .input-container select {
+        width: 100%;
+    }
+}
